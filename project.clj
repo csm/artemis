@@ -8,7 +8,14 @@
                  [org.immutant/web "2.1.5"]
                  [ring/ring-devel "1.5.0"]
                  [ring/ring-core "1.5.0"]
-                 [org.clojure/tools.cli "0.3.5"]]
+                 [org.clojure/tools.cli "0.3.5"]
+                 [org.danielsz/system "0.3.0"]]
+  :plugins [[lein-uberwar "0.2.0"]]
+  :uberwar {:handler artemis.core/handler}
+  ;; :aws {:beanstalk {:environments [{:name "development"
+  ;;                                   :cname-prefix "artemis-dev-cd1ed93e"}
+  ;;                                  {:name "production"
+  ;;                                   :cname-prefix "artemis-prod-0fc9a620"}]}}
   :main ^:skip-aot artemis.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}

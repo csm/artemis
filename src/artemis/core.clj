@@ -34,11 +34,15 @@
                     :return Greeting
                     :path-params [name :- String]
                     {:status 200
-                     :body {:result (greet name)}})))
+                     :body {:result (greet name)}})
+
+             (r/POST "/hello" [])))
 
 (def options
   [["-d" "--dev" "Run in dev mode (reloads code on changes)."]
    ["-h" "--help"]])
+
+(def handler (site app))
 
 (defn -main
   "Runs the server."
